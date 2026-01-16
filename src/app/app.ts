@@ -10,16 +10,13 @@ import { Event } from './event/event';
   styleUrl: './app.css'
 })
 export class App {
-  data:WritableSignal<string | number> = signal<string | number> ("sagar")
-  speed:Signal<number | string> = computed <string | number> (()=>90)
-  users:WritableSignal<number[]> = signal([1,2,3,4])
-  updateData(){
-    this.data.set("rana")
+ name:WritableSignal<string> = signal("") 
+  setValue(val:string){
+   this.name.set(val)
   }
 
-  addUserId(){
-    this.users.update((item)=>[...item, 8])
-    console.log(this.users())
+  setDefaultValue(){
+    this.name.set("sagar rana")
   }
   
  

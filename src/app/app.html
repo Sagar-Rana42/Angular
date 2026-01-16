@@ -1,3 +1,5 @@
-<h1>Signals data type</h1>
+<p>value : {{name()}}</p>
 
-<button (click)="addUserId()">show updated value in console</button>
+<input type="text" [value]="name()" (input)="setValue($event.target.value)">
+
+<button (click)="setDefaultValue()" >set default value</button>
