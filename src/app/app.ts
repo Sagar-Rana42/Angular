@@ -1,4 +1,4 @@
-import { Component, effect, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Counter } from './counter/counter';
 import { Event } from './event/event';
@@ -12,24 +12,11 @@ import { Event } from './event/event';
 export class App {
   protected readonly title = signal('angular-basics');
 
-  
-  // btnDisable = false
-  data = 10;
+  height = signal(100)
+  width  = signal(40)
 
-  count = signal(30)
-
-  constructor(){
-    effect(()=>{
-      // console.log("this is data " , this.data)
-      console.log("this is count " , this.count())
-    })
+  area = computed(()=> this.height() * this.width())
+  updateHeight(){
+    this.height.set(this.height()+10) 
   }
-  updateCount(){
-    this.count.set(this.count() + 1)
-  }
-
-  updateData(){
-    this.data ++;
-  }
-
 }

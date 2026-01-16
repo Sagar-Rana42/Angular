@@ -4,8 +4,14 @@
 <button disabled ="{{btnDisable}}" >Click ME</button>
 <button [disabled] ="btnDisable" >Click ME</button> -->
 
-<button (click)="updateCount()" >Update count</button>
+<!-- <button (click)="updateCount()" >Update count</button>
 <p>Signal : {{count()}}</p>
 
 <button (click)="updateData()" >Update data</button>
-<p>data : {{data}}</p>
+<p>data : {{data}}</p> -->
+
+<h4>Example of computed signals</h4>
+<p>Height and width = {{height()}} : {{width()}}</p>
+<button (click)="updateHeight()">updateHeight</button>
+<p>Area = {{area()}}</p>
+
