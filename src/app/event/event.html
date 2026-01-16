@@ -1,1 +1,22 @@
 <p>event works!</p>
+
+<h1>Event in Angular <nav></nav></h1>
+
+<button class="btn" (click) ="handleClickEvent($event)">Click event</button>
+<br><br>
+
+<div (mouseenter)="mouseEnterEvent($event)" style="background-color: aqua; height: 100px; width: 200px; border-radius: 4px;">
+    
+    Mouse Enter Event
+</div>
+<div (mouseleave)="mouseLeaveEvent($event)" style="margin: 10px; background-color: rgb(89, 157, 157); height: 100px; width: 200px; border-radius: 4px;">
+    
+    Mouse leave Event
+</div>
+
+<br>
+<br>
+
+<label for="name">Enter user name : </label>
+<!-- <input (input)="inputEvent($event)" type="text" id="name"> -->
+

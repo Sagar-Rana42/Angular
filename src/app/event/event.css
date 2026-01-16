@@ -1,0 +1,8 @@
+.btn{
+    background-color: bisque;
+    width: 200px;
+    height: 100px;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+}
