@@ -11,7 +11,7 @@
    <hr>
    <ul>
     @for(user of usersDetails(); track user.id){
-        <li [style.backgroundColor]="$odd?'#ccc':'#fff' ">
+        <li [style.backgroundColor]="$even?'#ccc':'#fff' ">
             <span>{{user.firstName +" "+ user.lastName }}</span>
             @if($first){<span style="color: red;">Admin</span>}
             @if($last){<span style="color: rgb(167, 98, 74);">Guest</span>}
