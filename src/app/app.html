@@ -1,2 +1,11 @@
-<!-- <app-counter></app-counter> -->
- <app-event></app-event>
+
+<!-- 
+<h1>Property Binding</h1>
+<button disabled ="{{btnDisable}}" >Click ME</button>
+<button [disabled] ="btnDisable" >Click ME</button> -->
+
+<button (click)="updateCount()" >Update count</button>
+<p>Signal : {{count()}}</p>
+
+<button (click)="updateData()" >Update data</button>
+<p>data : {{data}}</p>
