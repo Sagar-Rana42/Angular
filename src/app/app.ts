@@ -11,12 +11,25 @@ import { Event } from './event/event';
 })
 export class App {
   protected readonly title = signal('angular-basics');
+  speed = signal(0)
+  color = 'black'
 
-  height = signal(100)
-  width  = signal(40)
-
-  area = computed(()=> this.height() * this.width())
-  updateHeight(){
-    this.height.set(this.height()+10) 
+  constructor(){
+    effect(()=>{
+      if(this.speed() > 0 && this.speed() <= 80){
+        this.color= 'green'
+      }
+      if(this.speed() > 80 && this.speed() <= 100){
+        this.color = 'orange'
+      }
+      if(this.speed() > 100 ){
+        this.color = 'red'
+      }
+    })
   }
+
+  increaseSpeed(){
+    this.speed.set(this.speed() + 10)
+  }
+ 
 }

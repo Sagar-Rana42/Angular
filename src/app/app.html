@@ -1,17 +1,5 @@
-
-<!-- 
-<h1>Property Binding</h1>
-<button disabled ="{{btnDisable}}" >Click ME</button>
-<button [disabled] ="btnDisable" >Click ME</button> -->
-
-<!-- <button (click)="updateCount()" >Update count</button>
-<p>Signal : {{count()}}</p>
-
-<button (click)="updateData()" >Update data</button>
-<p>data : {{data}}</p> -->
-
-<h4>Example of computed signals</h4>
-<p>Height and width = {{height()}} : {{width()}}</p>
-<button (click)="updateHeight()">updateHeight</button>
-<p>Area = {{area()}}</p>
-
+<h3>Working of playlist</h3>
+<button (click)="increaseSpeed()" >Increase Speed</button>
+<p  [style.color]="color" style="font-size: large;"> Speed : {{speed()}}</p>
+<hr>
+<hr>
