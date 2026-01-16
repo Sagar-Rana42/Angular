@@ -10,14 +10,20 @@ import { Event } from './event/event';
   styleUrl: './app.css'
 })
 export class App {
- name:WritableSignal<string> = signal("") 
-  setValue(val:string){
-   this.name.set(val)
-  }
-
-  setDefaultValue(){
-    this.name.set("sagar rana")
-  }
+  users = signal(['batman','spider man','super man','iron man','thanos'])  
+  usersDetails = signal([
+  { id: 1,firstName: "Sagar",lastName: "Rana",email: "sagar.rana@example.com"  },
+  {id: 2, firstName: "Amit",lastName: "Sharma",email: "amit.sharma@example.com" },
   
- 
+  {
+    id: 3,firstName: "Priya",lastName: "Verma",email: "priya.verma@example.com" 
+  },
+  {
+    id: 4, firstName: "Rahul", lastName: "Mehta",email: "rahul.mehta@example.com"
+  },
+  {
+    id: 5, firstName: "Neha", lastName: "Singh", email: "neha.singh@example.com"
+  }
+]);
+
 }
