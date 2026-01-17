@@ -3,18 +3,19 @@ import { RouterOutlet } from '@angular/router';
 import { Counter } from './component/counter/counter';
 import { FormsModule } from '@angular/forms';
 import { Api } from './services/api';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { Child } from './child/child';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule,NgFor],
+  imports: [FormsModule , Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-
-  /*
+/*
+  
   productData:any = signal({})
   constructor(private productService:Api){
 
@@ -28,22 +29,9 @@ export class App {
   }
     */
  
-  isLogin = signal(true)
-  users = signal([1,2,3,4])
+ 
+  userName= signal(["sagar","rana","abc","def",'ghi'])
 
-  students= ["sagar" ,"rana","kumar","jalie"]
-  studentData = [
-    {
-      name:"sagar",
-      age:23,
-      email:"sagar@gmail.com"
-    },
-    {
-      name:"rana",
-      age:43,
-      email:"rana@gmail.com"
-    }
 
-  ]
 
 }
