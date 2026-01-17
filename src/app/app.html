@@ -1,11 +1,31 @@
-<h1>Product data</h1>
-<button (click)="loadData()">Load Data</button>
-<ul>
-    @for(item of productData(); track item.id){
-        <span>{{item.id}}  </span> 
-        <span>{{item.name}}  </span>
-        <span>{{item.price}}</span>
-        <hr>
+<h2 style="text-align:center; margin-bottom:16px;">Welcome to API</h2>
 
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price (₹)</th>
+      <th>Rating ⭐</th>
+      <th>warrantyInformation </th>
+      <th>shippingInformation </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (item of productData().products; track item.id) {
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.rating }}</td>
+        <td>{{ item.warrantyInformation }}</td>
+        <td>{{ item.shippingInformation }}</td>
+      </tr>
     }
-</ul>
+  </tbody>
+</table>

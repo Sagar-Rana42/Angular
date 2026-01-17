@@ -12,22 +12,19 @@ import { Api } from './services/api';
 })
 
 export class App {
-  productData : any = signal([])
-  constructor(private apiServices:Api){
-    // console.log("service called")
+  productData:any = signal({})
+  constructor(private productService:Api){
+
+  }
+  ngOnInit(){
+    this.productService.getProducts().subscribe((data)=>{
+      this.productData.set(data)
+      // console.log(data)
+      // console.log("product data = " ,this.productData().products)
+    })
   }
 
 
 
-  // ngOnInit(){
-  //   let data = this.apiServices.getUser()
-  //   console.log(data)
-  //   this.productData.set(data)
-  // }
-  loadData(){
-    let data = this.apiServices.getUser()
-    console.log(data)
-    this.productData.set(data)
-  }
 
 }
