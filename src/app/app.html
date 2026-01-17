@@ -1,4 +1,4 @@
-<h2 style="text-align:center; margin-bottom:16px;">Welcome to API</h2>
+<!-- <h2 style="text-align:center; margin-bottom:16px;">Welcome to API</h2>
 
 <table class="product-table">
   <thead>
@@ -28,4 +28,29 @@
       </tr>
     }
   </tbody>
-</table>
+</table> -->
+
+
+<!-- <p>*ngIf directive </p>
+
+<h1 *ngIf="isLogin()">Welcome to Directive</h1>
+<p>*ngFor directive</p>
+
+<div>
+  <ul *ngFor="let user of users()">
+    <li>{{user}}</li>
+  </ul>
+</div>
+ -->
+
+<ul>
+  <li *ngFor="let x of students">
+    {{x}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let x of studentData">
+    {{x.name}} , {{x.age}} , {{x.email}}
+  </li>
+</ul>
