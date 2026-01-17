@@ -1,8 +1,8 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Counter } from './counter/counter';
+import { Counter } from './component/counter/counter';
 import { FormsModule } from '@angular/forms';
-// import { Event } from './event/event';
+import { Api } from './services/api';
 
 @Component({
   selector: 'app-root',
@@ -12,22 +12,22 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class App {
-  name = signal("sagar ")
-  age = 10
+  productData : any = signal([])
+  constructor(private apiServices:Api){
+    // console.log("service called")
+  }
 
-  userData = signal({
-    title:"sagar rana",
-    age:24,
-    email:"sagar@gmail.com"
-  })
-  profileData = {
-    title:"rana",
-    age:40,
-    email:"rana@gmail.com"
+
+
+  // ngOnInit(){
+  //   let data = this.apiServices.getUser()
+  //   console.log(data)
+  //   this.productData.set(data)
+  // }
+  loadData(){
+    let data = this.apiServices.getUser()
+    console.log(data)
+    this.productData.set(data)
   }
-  updateUserData(key:string , value:string){
-    this.userData.update((item)=>({...item , [key]:value}))
-  }
- 
 
 }

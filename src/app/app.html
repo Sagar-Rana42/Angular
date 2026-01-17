@@ -1,33 +1,11 @@
-<h2>Two way data binding</h2>
-<h2>
-    {{name()}}
-</h2>
+<h1>Product data</h1>
+<button (click)="loadData()">Load Data</button>
+<ul>
+    @for(item of productData(); track item.id){
+        <span>{{item.id}}  </span> 
+        <span>{{item.name}}  </span>
+        <span>{{item.price}}</span>
+        <hr>
 
-<input type="text" [value]="name()" (input)="name.set($event.target.value)">
-<hr>
-<hr>
-
-<h2>{{age}}</h2>
-<input type="number" [(ngModel)]="age">
-<input type="text" [ngModel]="age" (ngModelChange)="age=$event">
-<hr>
-<hr>
-
-<h3>Update Objects with Two way data binding with signals</h3>
-<h1>{{userData().title}}</h1>
-<input type="text" [value]="userData().title" (input)="updateUserData('title',$event.target.value)">
-<h1>{{userData().age}}</h1>
-<input type="text" [value]="userData().age" (input)="updateUserData('age',$event.target.value)">
-<h1>{{userData().email}}</h1>
-<input type="text" [value]="userData().email" (input)="updateUserData('email',$event.target.value)">
-<hr>
-<hr>
-<hr>
-<h1>two way binding in object without signal</h1>
-<p>{{profileData.title}}</p>
-<!-- <input type="text" name="" id="" [value]="profileData.title" (input)="updateProfileData('title',$event.target.value)"> -->
-<input type="text" [(ngModel)]="profileData.title">
-<p>{{profileData.age}}</p>
-<input type="number" [(ngModel)]="profileData.age">
-<p>{{profileData.email}}</p>
-<input type="text" [(ngModel)]="profileData.email">
+    }
+</ul>
