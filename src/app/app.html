@@ -1,39 +1,12 @@
-<!-- 
-<h2 style="text-align:center; margin-bottom:16px;">Welcome to API</h2>
 
-<table class="product-table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Price (₹)</th>
-      <th>Rating ⭐</th>
-      <th>warrantyInformation </th>
-      <th>shippingInformation </th>
-    </tr>
-  </thead>
+<label for="name">Enter username user </label>
+<input type="text" id="name"
+ [value]="newUser()"
+ (input)="newUser.set($event.target.value)"
+>
+<button (click)="onChange()">Add User</button>
 
-  <tbody>
-    @for (item of productData().products; track item.id) {
-      <tr>
-        <td>{{ item.id }}</td>
-        <td>{{ item.title }}</td>
-        <td>{{ item.description }}</td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.rating }}</td>
-        <td>{{ item.warrantyInformation }}</td>
-        <td>{{ item.shippingInformation }}</td>
-      </tr>
-    }
-  </tbody>
-</table> 
--->
-
-<!-- <app-child [userame]="userName()"></app-child> -->
 @for( user of userName(); track user){
   <app-child [userName]="user"></app-child>
-}
 
+}

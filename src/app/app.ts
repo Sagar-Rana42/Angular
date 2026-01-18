@@ -8,29 +8,19 @@ import { Child } from './child/child';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule , Child],
+  imports: [FormsModule ,Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-/*
-  
-  productData:any = signal({})
-  constructor(private productService:Api){
 
-  }
-  ngOnInit(){
-    this.productService.getProducts().subscribe((data)=>{
-      this.productData.set(data)
-      // console.log(data)
-      // console.log("product data = " ,this.productData().products)
-    })
-  }
-    */
- 
- 
   userName= signal(["sagar","rana","abc","def",'ghi'])
+  newUser = signal('')
+  onChange(){
+    this.userName.update((data)=>([...data , this.newUser()]))
+    this.newUser.set('')
+  }
 
 
 
