@@ -1,12 +1,19 @@
+<!-- <h2>title in upperCase: {{title | uppercase}}</h2>
+<h2>title in titleCase: {{title | titlecase}}</h2> -->
 
-<label for="name">Enter username user </label>
-<input type="text" id="name"
- [value]="newUser()"
- (input)="newUser.set($event.target.value)"
->
-<button (click)="onChange()">Add User</button>
+<input type="text" [(ngModel)]="value">
+<p>Value = {{value | uppercase}}</p>
+<hr>
+<hr>
 
-@for( user of userName(); track user){
-  <app-child [userName]="user"></app-child>
+<h4>I bought a {{mobile | titlecase}} on {{date | date}} in INR {{amount | currency:'USD'}}</h4>
+<p>{{ 3.14159 | number:'1.2-5' }}</p>
+<p>date : {{today}} </p>
+<hr>
+<hr>
 
-}
+<h2> users: {{users() | json}} </h2>
+<hr>
+<hr>
+
+<h1>title : {{title() | trimaText}}</h1>

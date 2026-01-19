@@ -5,23 +5,25 @@ import { FormsModule } from '@angular/forms';
 import { Api } from './services/api';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Child } from './child/child';
+import { TrimaTextPipe } from './custom-pipe/trima-text-pipe';
+// import Date
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule ,Child],
+  imports: [FormsModule ,CommonModule , TrimaTextPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
+  
+  value = ''
+  mobile = "samsung"
+  date = "12/02/2025"
+  amount = "1000"
+  today = new Date()
 
-  userName= signal(["sagar","rana","abc","def",'ghi'])
-  newUser = signal('')
-  onChange(){
-    this.userName.update((data)=>([...data , this.newUser()]))
-    this.newUser.set('')
-  }
+  users = signal({name:"sagar" , age:20, email:"sr@gmail.com"})
 
-
-
+  title = signal("Pipes in Angular")
 }
