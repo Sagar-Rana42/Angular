@@ -1,19 +1,6 @@
-<!-- <h2>title in upperCase: {{title | uppercase}}</h2>
-<h2>title in titleCase: {{title | titlecase}}</h2> -->
+<app-header></app-header>
 
-<input type="text" [(ngModel)]="value">
-<p>Value = {{value | uppercase}}</p>
-<hr>
 <hr>
 
-<h4>I bought a {{mobile | titlecase}} on {{date | date}} in INR {{amount | currency:'USD'}}</h4>
-<p>{{ 3.14159 | number:'1.2-5' }}</p>
-<p>date : {{today}} </p>
-<hr>
-<hr>
 
-<h2> users: {{users() | json}} </h2>
-<hr>
-<hr>
-
-<h1>title : {{title() | trimaText}}</h1>
+<router-outlet></router-outlet>
